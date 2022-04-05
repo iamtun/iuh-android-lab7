@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <EditText
+        android:id="@+id/editTextTourName"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/vector"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="The place that you will visit in\nthe future"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Save"
+        android:backgroundTint="#C94820"
+        app:layout_constraintStart_toStartOf="@+id/editTextTourName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTourName" />
+
+    <Button
+        android:id="@+id/btnCanel"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#A4C94820"
+
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTourName"
+        app:layout_constraintTop_toTopOf="@+id/btnSave" />
+
+    <ListView
+        android:id="@+id/lvwTour"
+        android:layout_width="409dp"
+        android:layout_height="542dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+</androidx.constraintlayout.widget.ConstraintLayout>
