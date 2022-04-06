@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         //===================================== LIST VIEW SEND DATA ===============================
         intent = getIntent();
         String nameTour = intent.getStringExtra("name");
-        int idTour = intent.getIntExtra("id", 0);
+        int idTour = intent.getIntExtra("id_tour", 0);
         Boolean deleted = intent.getBooleanExtra("delete", false);
         tvTourName.setText(nameTour);
         //===================== DELETE ==================================
