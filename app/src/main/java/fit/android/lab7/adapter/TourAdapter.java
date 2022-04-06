@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fit.android.lab7.R;
+import fit.android.lab7.activity.DetailTour;
 import fit.android.lab7.activity.MainActivity;
 import fit.android.lab7.database.DatabaseHandler;
 import fit.android.lab7.model.Tour;
@@ -58,12 +59,10 @@ public class TourAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Tour tour = tourList.get(index);
 
-                Intent intent = new Intent(context, MainActivity.class);
+                Intent intent = new Intent(context, DetailTour.class);
 
                 Bundle bundle = new Bundle();
-                bundle.putInt("id", tour.getId());
-                bundle.putString("name", tour.getNameTour());
-                bundle.putBoolean("update", true);
+                bundle.putInt("id_tour", tour.getId());
                 intent.putExtras(bundle);
 
                 context.startActivity(intent);
@@ -78,7 +77,7 @@ public class TourAdapter extends BaseAdapter {
                 Intent intent = new Intent(context, MainActivity.class);
 
                 Bundle bundle = new Bundle();
-                bundle.putInt("id", tour.getId());
+                bundle.putInt("id_tour", tour.getId());
                 bundle.putString("name", tour.getNameTour());
                 bundle.putBoolean("delete", true);
                 intent.putExtras(bundle);

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -46,7 +47,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String nameTour = tvTourName.getText().toString();
-                int id = db.getToursCount() + 1;
+                //Handle id tour
+                int id = 0;
+                if(db.getToursCount() == 0)
+                    id = 1;
+                else
+                    id = db.getIdLastTour() + 1;
 
                 db.addTour(new Tour(id, nameTour));
                 reloadData(db, tourList, lvwTour);
@@ -55,33 +61,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //===================================== LIST VIEW SEND DATA ===============================
         intent = getIntent();
-
-        if(intent != null) {
-            String nameTour = intent.getStringExtra("name");
-            int idTour = intent.getIntExtra("id", 0);
-            Boolean deleted = intent.getBooleanExtra("delete", false);
-            Boolean updated = intent.getBooleanExtra("update", false);
-            tvTourName.setText(nameTour);
-            //===================== DELETE ==================================
-            if(deleted) {
+        String nameTour = intent.getStringExtra("name");
+        int idTour = intent.getIntExtra("id", 0);
+        Boolean deleted = intent.getBooleanExtra("delete", false);
+        tvTourName.setText(nameTour);
+        //===================== DELETE ==================================
+        if(deleted) {
+            if(db.getCustomerCountInTour(idTour) > 0){
+                Toast.makeText(this, "Số lượng khách hàng lớn hơn 0. Không thể xóa tour", Toast.LENGTH_SHORT).show();
+            }else {
                 db.deleteTour(new Tour(idTour, nameTour));
                 reloadData(db, tourList, lvwTour);
-            }
-
-            //--------------------- UPDATE ===================================
-            if(updated) {
-                btnSave.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String nameTour = tvTourName.getText().toString();
-
-                        db.updateTour(new Tour(idTour, nameTour));
-                        reloadData(db, tourList, lvwTour);
-
-                        tvTourName.setText("");
-                    }
-                });
             }
         }
 

@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/drawable/custom_input.xml" value="0.251" />
         <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/drawable/custom_item_tour.xml" value="0.2645" />
+        <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/layout/activity_detail_tour.xml" value="0.259375" />
         <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/layout/custom_item_person.xml" value="0.536" />
         <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/layout/custom_item_travel.xml" value="0.264" />
         <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/layout/custom_list_travel.xml" value="0.259375" />
         <entry key="..\:/IUH.STUDY/K2N3_2022/android/lab7/app/src/main/res/layout/fragment_tour_list.xml" value="0.259375" />
